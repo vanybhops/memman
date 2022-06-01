@@ -63,14 +63,14 @@ public:
     }
 
     int readMemInt(uintptr_t addr) {
-        int x;
-        Toolhelp32ReadProcessMemory(procID, (LPBYTE*)addr, &x, sizeof(x), NULL);
-        return x;
+        int value;
+        Toolhelp32ReadProcessMemory(procID, (LPBYTE*)addr, &value, sizeof(value), NULL);
+        return value;
     }
     float readMemFloat(uintptr_t addr) {
-        float x;
-        Toolhelp32ReadProcessMemory(procID, (LPBYTE*)addr, &x, sizeof(x), NULL);
-        return x;
+        float value;
+        Toolhelp32ReadProcessMemory(procID, (LPBYTE*)addr, &value, sizeof(value), NULL);
+        return value;
     }
 
     void readString(uintptr_t addr, char* buffer, SIZE_T size) {
